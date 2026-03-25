@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: #b22200;
+  --color-primary-container: #ff785a;
+  --color-background: #f9f6f5;
+  --color-surface: #ffffff;
+  --color-on-surface: #2f2e2e;
+  --color-on-surface-variant: #5c5b5b;
+  --color-outline-variant: #afacac;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-body;
+  }
+}
+
+@layer utilities {
+  .editorial-shadow {
+    box-shadow: 0 30px 60px rgba(47, 46, 46, 0.06);
+  }
+  
+  .ticket-cutout {
+    mask-image: radial-gradient(circle at 0px 50%, transparent 12px, black 12px),
+                radial-gradient(circle at 100% 50%, transparent 12px, black 12px);
+    mask-composite: intersect;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
